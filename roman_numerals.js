@@ -1,5 +1,19 @@
 function to_roman (num) {
   // your implementation code here
+var romans = ['M','CM','DC','D','CD','C','XC','L','XL','X','IX','V','IV','I'];
+var arabics = [1000,900,600,500,400,100,90,50,40,10,9,5,4,1];
+var output = ''
+
+
+  for(var i=0; i<arabics.length; i++){
+    while(num>=arabics[i]){
+      num -= arabics[i]
+      output += romans[i]
+    }
+  }
+  
+  return output
+
 }
 
 // Drive code
