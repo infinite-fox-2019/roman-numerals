@@ -1,5 +1,17 @@
-function to_roman (num) {
+function to_roman(num) {
   // your implementation code here
+  const roman = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']
+  const number = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+  let getRoman = ''
+
+  for (let i = 0; i < number.length; i++) {
+    while (num >= number[i]) {
+      getRoman += roman[i]
+      num -= number[i]
+    }
+  }
+
+  return getRoman
 }
 
 // Drive code
