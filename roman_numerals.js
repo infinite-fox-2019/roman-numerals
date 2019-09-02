@@ -1,5 +1,43 @@
 function to_roman (num) {
   // your implementation code here
+  if (num > 3000 || num < 1){
+    return 'input number between 1 to 3000'
+  }
+
+  var romanNumeral = {
+    MMM: 3000,
+    M: 1000,
+    CM: 900,
+    D: 500,
+    CD: 400,
+    CCC: 300,
+    C: 100,
+    XC: 90,
+    L: 50,
+    XL: 40,
+    XXX: 30,
+    X: 10,
+    IX: 9,
+    V: 5,
+    IV: 4,
+    III: 3,
+    I: 1
+  }
+  var romanArr = Object.keys(romanNumeral)
+  for(i=0 ; i<romanArr.length ; i++){
+    if(romanNumeral[romanArr[i]] > num){
+      romanArr.shift()
+    }
+  }
+
+  var result = ''
+  for(i=0 ; i<romanArr.length ; i++){
+    if(num >= romanNumeral[romanArr[i]]){
+      num -= romanNumeral[romanArr[i]]
+      result += romanArr[i]
+    }
+  }
+  return result
 }
 
 // Drive code
