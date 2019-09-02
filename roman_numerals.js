@@ -1,6 +1,6 @@
 function to_roman (num) {
   var strNum = num.toString();
-  var arrRoman = ['M','DM','D','CD','C','LC','L','XL','X','XV','V','IV','I'];
+  var arrRoman = ['M','CM','D','CD','C','XC','L','XL','X','IV','V','IV','I'];
   var arrRomanValue = [1000,900,500,400,100,90,50,40,10,9,5,4,1];
   var hasilRoman = '';
   for(i = 0; i <strNum.length; i++){
