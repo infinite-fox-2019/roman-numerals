@@ -1,5 +1,18 @@
 function to_roman (num) {
-  // your implementation code here
+  var array = [[1000,'M'],[900,'CM'],[500,'D'],[400,'CD'],[100,'C'],[50,'L'],[40,'XL'],[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']]
+  var str = ''
+  
+  if(num>3000) return 'invalid number'
+
+  while (num>0){
+    for(var i = 0; i<array.length;i++){
+      if (num >= array[i][0] ){
+      str +=array[i][1]
+      num -= array[i][0]
+      }
+    }
+  }
+  return str
 }
 
 // Drive code
