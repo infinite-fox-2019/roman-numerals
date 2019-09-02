@@ -1,5 +1,16 @@
 function to_roman (num) {
   // your implementation code here
+  var result = '';
+  var arr_number = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000]
+  var arr_romawi = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M']
+
+  for (var i = arr_number.length - 1; i >= 0; i--) {
+    while (num >= arr_number[i]) {
+      num = num - arr_number[i]
+      result = result + arr_romawi[i]
+    }
+  }
+  return result
 }
 
 // Drive code
