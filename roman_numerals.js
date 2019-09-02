@@ -1,5 +1,35 @@
+function to_romanWork(angka){
+  var obj = {
+    MM:3000,
+    M: 1000,
+    CM:900,
+    D: 500,
+    CD: 400,
+    CC:200,
+    C: 100,
+    L: 50,
+    XL:40,
+    X:10,
+    IX:9,
+    V:5,
+    IV:4,
+    I:1
+  }
+  var angkaNon = angka
+  var temp = ''
+  while (angkaNon > 0){
+    for(var i in obj){
+      if (angkaNon >= obj[i]) {
+        temp += i
+        angkaNon = angkaNon - obj[i]
+      }
+    }
+  }
+  return temp
+}
+
 function to_roman (num) {
-  // your implementation code here
+    return to_romanWork(num)
 }
 
 // Drive code
