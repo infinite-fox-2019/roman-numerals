@@ -24,11 +24,6 @@ function to_roman (num) {
     I: 1
   }
   var romanArr = Object.keys(romanNumeral)
-  for(i=0 ; i<romanArr.length ; i++){
-    if(romanNumeral[romanArr[i]] > num){
-      romanArr.shift()
-    }
-  }
 
   var result = ''
   for(i=0 ; i<romanArr.length ; i++){
