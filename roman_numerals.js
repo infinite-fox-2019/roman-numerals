@@ -1,7 +1,32 @@
 function to_roman (num) {
-  // your implementation code here
-}
-
+    //error handling
+    if (num<1 || num>3000) return 'Invalid input'
+    //kamus angka romawi
+    var rom = {
+        M: 1000,
+        CM: 900,
+        D: 500,
+        CD: 400,
+        C: 100,
+        XC: 90,
+        L: 50,
+        XL: 40,
+        X: 10,
+        IX: 9,
+        V: 5,
+        IV: 4,
+        I: 1   
+    }
+    var output = ''
+    for (var key in rom) {
+        while (num >= rom[key]) {
+            output += key
+            num -= rom[key]
+        }
+    }
+    return output
+  }
+  
 // Drive code
 console.log('My totally sweet testing script for new roman\n')
 console.log('input | expected | actual')
